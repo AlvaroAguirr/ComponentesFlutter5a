@@ -8,10 +8,42 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
- return  const Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      );
+ return   Scaffold(
+      appBar: AppBar(
+      title: const Text("App de componenetes de flutter"),
+      ),
+        body: ListView(
+          children: const [
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces "),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces "),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces "),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces "),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces ",style: TextStyle(fontSize: 52),),
+            Text("holas que haces "),
+            Text("holas que haces "),
+            Text("holas que haces "),
+            Text("holas que haces "),
+            Text("holas que haces "),
+            Text("holas que haces "),
+            Text("holas que haces "),
+           
+          ],
+        )
+ );
+    
        }
 }
