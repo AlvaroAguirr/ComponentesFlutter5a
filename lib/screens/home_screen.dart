@@ -1,7 +1,7 @@
 // stl crea todo el stales windet
 
-
 import 'package:flutter/material.dart';
+import 'package:practica3/theme/app_theme.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           children:<Widget> [
              ListTile(
               title: Text("Entradas",
-                      style: Theme.of(context).textTheme.headlineLarge),
+                      style: AppTheme.lightTheme.textTheme.headlineLarge),
               subtitle:  Text("recurperar informacion del textField",
                       style: Theme.of(context).textTheme.bodySmall),
               leading: const Icon(Icons.inbox_rounded),
@@ -25,9 +25,10 @@ class HomeScreen extends StatelessWidget {
             const Divider(height: 50,),
              ListTile(
               title: Text("Lista infinita",
-                      style: Theme.of(context).textTheme.headlineLarge),
+                      style: AppTheme.lightTheme.textTheme.headlineLarge
+                      ),
               subtitle: Text("Recuperar muchos elementos",
-                          style: Theme.of(context).textTheme.bodySmall),
+                         style: Theme.of(context).textTheme.bodySmall),
               leading: const Icon(Icons.leak_remove_outlined),
               trailing: const Icon(Icons.arrow_right_outlined),
             ),
@@ -43,6 +44,5 @@ class HomeScreen extends StatelessWidget {
           ],
         )
  );
-    
-       }
+}
 }
