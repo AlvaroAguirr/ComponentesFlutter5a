@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme{
 // constante de color primario 
-static const primaryColor = Color.fromARGB(225, 1, 1, 1);
+static const primaryColor = Color.fromARGB(224, 95, 95, 95);
 //constate del color de fondo
-static const backColor = Color.fromARGB(255, 234, 255, 225);
+static const backColor = Color.fromARGB(255, 218, 255, 203);
 // constante  del color secundario 
 static const secundaryColor = Color.fromARGB(255, 108, 41, 57);
 //definicino del tema de color y estilo de la app
@@ -14,15 +14,21 @@ static const secundaryColor = Color.fromARGB(255, 108, 41, 57);
       scaffoldBackgroundColor: backColor,
         appBarTheme:const AppBarTheme(color: backColor),
         textTheme: TextTheme(
-         headlineLarge: GoogleFonts.rokkitt(
-                        fontSize: 32,
+         headlineLarge: GoogleFonts.prompt(
+                        fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color:primaryColor),
+                        color:primaryColor,
+                        decoration: TextDecoration.overline,
+                        decorationColor: primaryColor,
+                        decorationStyle: TextDecorationStyle.dashed,
+                        decorationThickness: 80,
+                        ),
 
-         bodySmall: GoogleFonts.aBeeZee(
+         bodySmall: GoogleFonts.abel(
                         fontSize: 14,
                         fontWeight:FontWeight.w500,
                         color:secundaryColor,
+                        fontStyle: FontStyle.italic
                         )
         )
   );
