@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
 
               leading: const Icon(Icons.inbox_rounded, color: AppTheme.primaryColor,),
               trailing: const Icon(Icons.arrow_right_outlined, color: AppTheme.primaryColor,),
-            ),
+            ), 
             const Divider(height: 50,),
              ListTile(
               title: Text("Lista infinita",
