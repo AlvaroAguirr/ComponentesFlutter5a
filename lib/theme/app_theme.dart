@@ -12,7 +12,7 @@ static const secundaryColor = Color.fromARGB(255, 108, 41, 57);
 //definicino del tema de color y estilo de la app
   static final ThemeData lightTheme= ThemeData.light().copyWith(
       scaffoldBackgroundColor: backColor,
-        appBarTheme:const AppBarTheme(color: backColor),
+        appBarTheme:const AppBarTheme(color: Color.fromARGB(255, 182, 212, 171)),
         textTheme: TextTheme(
          headlineLarge: GoogleFonts.prompt(
                         fontSize: 24,
@@ -21,7 +21,7 @@ static const secundaryColor = Color.fromARGB(255, 108, 41, 57);
                         decoration: TextDecoration.overline,
                         decorationColor: primaryColor,
                         decorationStyle: TextDecorationStyle.dashed,
-                        decorationThickness: 80,
+                        decorationThickness: 5,
                         ),
 
          bodySmall: GoogleFonts.abel(

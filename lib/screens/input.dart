@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class Inputs extends StatefulWidget {
+  const Inputs({super.key});
 
   @override
-  State<MyWidget> createState() => _InputsState();
+  State<Inputs> createState() => _InputsState();
 }
 
-class _InputsState extends State<MyWidget> {
+class _InputsState extends State<Inputs> {
   @override
   Widget build(BuildContext context) {
     return const Center(
       child: Text("ventana de entrada "),
-
+      
     );
   }
 }
