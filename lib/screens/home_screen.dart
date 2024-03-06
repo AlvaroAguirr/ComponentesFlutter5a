@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:practica3/screens/images_screen.dart';
 import 'package:practica3/screens/infinite_list.dart';
 import 'package:practica3/screens/input.dart';
 import 'package:practica3/screens/notifications.dart';
@@ -18,6 +19,7 @@ class HomeScreen extends StatelessWidget {
       ),
         body: ListView(
           children:<Widget> [
+            
             const Divider(height: 20,),
              ListTile(
               title: Text("Entradas",
@@ -27,7 +29,14 @@ class HomeScreen extends StatelessWidget {
 
 
               leading: const Icon(Icons.inbox_rounded, color: AppTheme.primaryColor,),
-              trailing: const Icon(Icons.arrow_right_outlined, color: AppTheme.primaryColor),
+              trailing: const CircularProgressIndicator(
+                value: 0.995,
+              ),
+
+
+
+
+            //  trailing: const Icon(Icons.arrow_right_outlined, color: AppTheme.primaryColor),
 
               //movimiento de rutas
               onTap: () {
@@ -79,7 +88,34 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(context, ruta3);
               }
 
-            )
+            ),
+            
+            const Divider(height: 40,),
+             ListTile(
+              title: Text("Lista images",
+                      style: AppTheme.lightTheme.textTheme.headlineLarge
+                      ),
+              subtitle: Text("widget de recuperacion de imagenes",
+                         style: AppTheme.lightTheme.textTheme.bodySmall),
+
+              leading: const Icon(Icons.image,color: AppTheme.primaryColor),
+              trailing: const Icon(Icons.arrow_right_outlined,color: AppTheme.primaryColor),
+
+     //movimiento de rutas
+              onTap: () {
+                final ruta4= MaterialPageRoute(builder:(context){
+                  return const ImagesScreen();
+                });
+                Navigator.push(context, ruta4);
+              }
+
+
+
+            ),
+           
+
+            
+ 
           ],
         )
  );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:practica3/theme/app_theme.dart';
-
 class Inputs extends StatefulWidget {
   const Inputs({super.key});
 
@@ -9,23 +8,95 @@ class Inputs extends StatefulWidget {
 }
 
 class _InputsState extends State<Inputs> {
+  
+  bool valueSwitch = false;
+  double sliderValue= 0.0;
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text("ventana de entrada",
-        style: AppTheme.lightTheme.textTheme.headlineLarge,),
-          Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return  Scaffold(
+      appBar: AppBar(
+        title: const Text("entradas")
+      ),
+
+      body: Padding(
+        padding: const EdgeInsets.all(35.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
           children: [
-           ElevatedButton(onPressed: null,
-           child:  Text("ir patra",style: AppTheme.lightTheme.textTheme.bodySmall )),
-           ElevatedButton(onPressed: null,
-           child:  Text("ir patrolao(dScre)", style: AppTheme.lightTheme.textTheme.bodySmall)),
+         
+
+            entradaTexto(),
+            entradaSwitch(),
+            entradaSlider(),
+               const ElevatedButton(
+                 onPressed: null,
+                 child:  Text(
+                "guardar")),
+
           ],
-        )
-      ],
+        ),
+      ),
+      bottomNavigationBar:  BottomNavigationBar(
+        items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),label: "inicio"),
+        BottomNavigationBarItem(
+            icon:Icon(Icons.abc_sharp), label: "input")
+      ]),
     );
   }
+
+  TextField entradaTexto() {
+    return TextField(
+          style: AppTheme.lightTheme.textTheme.headlineMedium,
+            decoration: InputDecoration(
+            border: const UnderlineInputBorder(),
+            labelText: "scrib tu nombre",
+            labelStyle: AppTheme.lightTheme.textTheme.headlineLarge
+            ),
+        );
+  }
+ Row entradaSwitch(){
+  return Row(
+  children: [
+    const FlutterLogo(),
+    Text("¿Te gusta Flutter?",
+    style: AppTheme.lightTheme.textTheme.headlineLarge),
+Switch (
+value: valueSwitch,
+  onChanged:(value){
+    setState(() {
+      valueSwitch = value;
+    });
+  }
+)
+
+  ],
+  );
+ }
+ 
+  Column entradaSlider() {
+    return Column(
+      children: [
+        Text("¿Qué tanto te gusta flutter?",
+         style: AppTheme.lightTheme.textTheme.headlineLarge,),
+
+         Slider(
+          min: 0.0,
+          max: 15.0,
+          value: sliderValue,
+          divisions:45,
+          label:"${sliderValue.round()}",
+          onChanged: (value){
+            setState(() {
+            sliderValue= value;
+            print("valor del slider: $sliderValue");
+
+            });
+          }),
+                  ],
+    );
+  }
+
 }
