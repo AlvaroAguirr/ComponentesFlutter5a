@@ -8,9 +8,12 @@ class Inputs extends StatefulWidget {
 }
 
 class _InputsState extends State<Inputs> {
-  
+  // varies del entrada
   bool valueSwitch = false;
   double sliderValue= 0.0;
+  int foodRadio =0;
+
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -24,11 +27,11 @@ class _InputsState extends State<Inputs> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
           children: [
-         
 
             entradaTexto(),
             entradaSwitch(),
             entradaSlider(),
+            entradasRadio(),
                const ElevatedButton(
                  onPressed: null,
                  child:  Text(
@@ -96,6 +99,43 @@ value: valueSwitch,
             });
           }),
                   ],
+    );
+  }
+  
+  Column entradasRadio() {
+    return Column(children: [
+    const Text("¿what do you want?"),
+    ListTile(
+      title: Text("Tacos de pastor",
+      style: AppTheme.lightTheme.textTheme.bodySmall),
+      leading:Radio(
+        value: 1,
+        groupValue: foodRadio,
+          onChanged: (value){
+            setState(() {
+            foodRadio= value!;
+            print("valor del slider: $foodRadio");
+
+            });
+          }
+      ),
+    ),
+    ListTile(
+      title: Text("Chileatole",
+      style: AppTheme.lightTheme.textTheme.bodySmall),
+      leading:Radio(
+        value: 2,
+        groupValue: foodRadio,
+          onChanged: (value){
+            setState(() {
+            foodRadio= value!;
+            print("valor del slider: $foodRadio");
+
+            });
+          }
+      ),
+    ),
+    ],
     );
   }
 
